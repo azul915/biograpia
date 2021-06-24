@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  jdk:
+    build:
+      context: .
+      dockerfile: ./docker/kt-app.dockerfile
+      target: dev
+    working_dir: /usr/local
+    tty: true
+    volumes:
+      - ./kotlin:/usr/local/kotlin
+      - ./build.sh:/usr/local/build.sh
