@@ -10,3 +10,6 @@ services:
     volumes:
       - ./kotlin:/usr/local/kotlin
       - ./build.sh:/usr/local/build.sh
+      - ./kotlin/.aws:/root/.aws
+    env_file:
+      - ./kotlin/.env

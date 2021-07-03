@@ -29,6 +29,10 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1-jre")
 
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/bom
+    implementation(platform("software.amazon.awssdk:bom:2.15.0"))
+    implementation("software.amazon.awssdk:sts")
+
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
@@ -40,4 +44,10 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClass.set("biograpia.AppKt")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
